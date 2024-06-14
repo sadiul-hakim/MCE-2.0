@@ -36,11 +36,16 @@ class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
                 .authenticationProvider(authenticationProvider())
                 .formLogin(login -> login.loginPage("/login")
+                        .permitAll()
                         .loginProcessingUrl("/authenticate")
                         .failureForwardUrl("/login?error=true")
                         .defaultSuccessUrl("/dashboard", true)
                         .usernameParameter("email")
                         .passwordParameter("password"))
+                .logout(logout -> logout.logoutUrl("/perform_logout")
+                        .logoutSuccessUrl("/login?logout=true")
+                        .permitAll()
+                )
                 .build();
     }
 }

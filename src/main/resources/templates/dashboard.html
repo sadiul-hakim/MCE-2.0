@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/head :: head_tag(~{::title})}">
     <meta charset="UTF-8">
     <title>Dashboard</title>
 </head>
 <body>
+<nav th:replace="~{fragments/common_navbar :: navbar}"></nav>
     <h1>Dashboard</h1>
 </body>
 </html>
