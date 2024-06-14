@@ -1,0 +1,30 @@
+
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark p-2" th:fragment="navbar(authenticated)">
+    <div class="container d-flex justify-content-around align-items-center flex-wrap">
+        <a class="navbar-brand" th:href="@{/}"><i class="bi bi-person-rolodex"></i> CMS 2.0</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Service</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <a th:href="@{/login}" class="btn btn-primary">Login</a>
+            <a th:href="@{/register}" class="btn btn-primary ms-1">Register</a>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head_tag(~{::title})}">
+    <title>Register Page</title>
+</head>
+<body>
+<nav th:replace="~{fragments/common_navbar :: navbar(false)}"></nav>
+
+<div class="container mt-4">
+    <div class="row">
+        <form
+                th:action="@{/user/}"
+                class="col-md-5 mx-auto card p-3"
+                data-th-object="${userDTO}"
+                method="post"
+        >
+            <h3 class="text-primary mx-auto my-2"><i class="bi bi-person-square"></i> Create Account</h3>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" class="form-control" th:value="*{name}"/>
+                <p
+                    th:if="${#fields.hasErrors('name')}"
+                    th:errors="*{name}"
+                    class="text-danger my-1 "
+                >
+
+                </p>
+            </div>
+            <br/>
+            <div>
+                <label for="email">Email Address</label>
+                <input type="text" name="email" id="email" class="form-control" th:value="*{email}"/>
+                <p
+                        th:if="${#fields.hasErrors('email')}"
+                        th:errors="*{email}"
+                        class="text-danger my-1 "
+                >
+
+                </p>
+            </div>
+            <br/>
+            <div>
+                <label for="phoneNumber">Phone Number with Country Code</label>
+                <input type="text" name="phoneNumber" id="phoneNumber" class="form-control" th:value="*{phoneNumber}"/>
+                <p
+                        th:if="${#fields.hasErrors('phoneNumber')}"
+                        th:errors="*{phoneNumber}"
+                        class="text-danger my-1 "
+                >
+
+                </p>
+            </div>
+            <br/>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" th:value="*{password}"/>
+                <p
+                        th:if="${#fields.hasErrors('password')}"
+                        th:errors="*{password}"
+                        class="text-danger my-1 "
+                >
+
+                </p>
+            </div>
+            <br/>
+            <div>
+                <label for="about">About</label>
+                <textarea type="text" name="about" id="about" class="form-control" th:value="*{about}"></textarea>
+                <p
+                        th:if="${#fields.hasErrors('about')}"
+                        th:errors="*{about}"
+                        class="text-danger my-1 "
+                >
+
+                </p>
+            </div>
+            <br/>
+            <div>
+                <button class="btn btn-primary" type="submit">Register</button>
+                <button class="btn btn-danger">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
