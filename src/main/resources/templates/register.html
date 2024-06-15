@@ -40,18 +40,6 @@
             </div>
             <br/>
             <div>
-                <label for="phoneNumber">Phone Number with Country Code</label>
-                <input type="text" name="phoneNumber" id="phoneNumber" class="form-control" th:value="*{phoneNumber}"/>
-                <p
-                        th:if="${#fields.hasErrors('phoneNumber')}"
-                        th:errors="*{phoneNumber}"
-                        class="text-danger my-1 "
-                >
-
-                </p>
-            </div>
-            <br/>
-            <div>
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" class="form-control" th:value="*{password}"/>
                 <p

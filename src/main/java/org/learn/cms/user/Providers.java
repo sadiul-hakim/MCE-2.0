@@ -1,5 +1,6 @@
 package org.learn.cms.user;
 
-enum Providers {
-    SELF
+public enum Providers {
+    SELF,
+    GOOGLE
 }

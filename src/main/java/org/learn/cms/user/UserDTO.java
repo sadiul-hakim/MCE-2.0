@@ -11,6 +11,8 @@ import org.hibernate.validator.constraints.Length;
 @AllArgsConstructor
 public class UserDTO {
 
+    private long id;
+
     @NotEmpty
     @NotNull
     @Size(max = 75)
@@ -24,15 +26,14 @@ public class UserDTO {
 
     @NotEmpty
     @NotNull
-    @Size(max = 75)
-    public String phoneNumber;
-
-    @NotEmpty
-    @NotNull
     @Length(min = 8, max = 16)
     public String password;
 
     @Size(max = 500)
     public String about;
     public String profilePic;
+    private boolean enabled;
+    private boolean emailVerified;
+    private Providers provider = Providers.SELF;
+    private String userProviderId;
 }

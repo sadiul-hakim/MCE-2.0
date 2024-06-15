@@ -38,11 +38,6 @@ public class UserModel {
 
     @NotEmpty
     @NotNull
-    @Column(length = 25)
-    private String phoneNumber;
-
-    @NotEmpty
-    @NotNull
     @Column(length = 200)
     private String password;
 
@@ -57,6 +52,7 @@ public class UserModel {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY, orphanRemoval = true)
     private List<ContactModel> contacts = new ArrayList<>();
 
+    @Column(length = 30)
     @Enumerated(EnumType.STRING)
     private Providers provider = Providers.SELF;
     private String userProviderId;
